@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+<form method="post">
+    {% csrf_token %}
+
+    {% for question in questions %}
+        <label>{{question.question|linebreaksbr}}</label>
+        <div class="form-check">
+<!--             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>-->
+            <label class="form-check-label" for="exampleRadios1">A:  {{question.a}}</label>
+        </div>
+
+        <div class="form-check">
+<!--         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">-->
+        <label class="form-check-label" for="exampleRadios2">B: {{question.b}}</label>
+        </div>
+
+        <div class="form-check">
+<!--         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">-->
+        <label class="form-check-label" for="exampleRadios2">C: {{question.c}}</label>
+        </div>
+
+        <div class="form-check">
+         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
+        <label class="form-check-label" for="exampleRadios2">D: {{question.d}}</label>
+        </div>
+
+        {% if not submitted %}
+        {{form.as_p}}
+        {% endif %}
+        
+        
+    {% endfor %}  
+
+    <div class="paginator"> 
+
+        {% if not submitted %}
+            <input value="Submit the Answer" type="submit" class="btn btn-success"/>
+        
+        {% else %}
+            {% if questions.has_next %}
+            <br>
+            <br>
+                <a type="button" class="btn btn-outline-primary" href="?page={{ questions.next_page_number }}">Next</a>
+
+            {% else %}
+            <br>
+            <br>
+            <a type="button" href="{% url 'result' subject.id %}" class="btn btn-outline-primary" >See Results</a>
+            {% endif %}
+        {% endif %}
+              
+    
+           
+    </div>
+</form>    
+
+{% endblock content%}

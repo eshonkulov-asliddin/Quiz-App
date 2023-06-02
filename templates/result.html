@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Congratulations, You have finished the QUIZ.</h1>
+    <hr>
+        <h3>Subject: {{subject}}</h3>
+        <h3>Correct Answer: {{correctAnswer}}</h3>
+        <h3>Wrong Answer: {{wrongAnswer}}</h3>
+        <br>
+        <a href="{%url 'quiz-card'%}" type="button" class="btn btn-outline-primary">Check other Quizes!</a>
+</div>
+{% endblock content %}

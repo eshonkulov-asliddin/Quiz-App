@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<br>
+<div class="container col-xxl-8 px-4 py-5">
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="https://images.pexels.com/photos/904616/pexels-photo-904616.jpeg?cs=srgb&dl=pexels-thought-catalog-904616.jpg&fm=jpg" class="d-block mx-lg-auto img-fluid rounded float-start" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+    </div>
+    <div class="col-lg-6">
+
+      <h3>Welcome to Q&A</h3>
+      <p class="lead">Ready to solve the Awesome QUIZES.</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a href="{% url 'quiz-card' %}" type="button" class="btn btn-primary  ">Let's get Started</a>
+        <button type="button" class="btn btn-outline-secondary ">About</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

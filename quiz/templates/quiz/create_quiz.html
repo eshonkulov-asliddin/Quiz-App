@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+
+{% block content%}
+<form method="POST", enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    Number of Questions: <input type="number" name="numberOfquestion" >
+    <br>
+    <input type="submit" value="Submit">
+</form>
+{% endblock content %}
