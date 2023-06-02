@@ -1,3 +1,4 @@
+![sign-up](https://github.com/eshonkulov-asliddin/Quiz-App/assets/98747380/e90db5e1-ceb3-426a-a50d-883c8337a138)
 # Quiz App
 ### This is a quiz app that allows users to create and take quizzes. The app includes the following features:
 
